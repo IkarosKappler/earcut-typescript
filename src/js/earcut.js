@@ -1,6 +1,7 @@
 "use strict";
-// Original algorithms by https://github.com/mapbox/earcut
+// Original algorithm by https://github.com/mapbox/earcut
 //
+// Ported to TypeScript by Ikaros Kappler
 // @date 2020-12-08
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.earcut = void 0;
@@ -50,7 +51,7 @@ exports.earcut = (function () {
             outerNode = eliminateHoles(data, holeIndices, outerNode, dim);
         }
         // if the shape is not too simple, we'll use z-order curve hash later; calculate polygon bbox
-        // TODO: use Bounds class for calculation
+        // TODO: use Bounds class for calculation?
         if (data.length > 80 * dim) {
             minX = maxX = data[0];
             minY = maxY = data[1];

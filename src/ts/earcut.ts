@@ -1,5 +1,6 @@
-// Original algorithms by https://github.com/mapbox/earcut
+// Original algorithm by https://github.com/mapbox/earcut
 //
+// Ported to TypeScript by Ikaros Kappler
 // @date 2020-12-08
 
 interface IVertex {
@@ -71,7 +72,7 @@ export const earcut = (() => {
 	}
 
 	// if the shape is not too simple, we'll use z-order curve hash later; calculate polygon bbox
-	// TODO: use Bounds class for calculation
+	// TODO: use Bounds class for calculation?
 	if (data.length > 80 * dim) {
             minX = maxX = data[0];
             minY = maxY = data[1];
