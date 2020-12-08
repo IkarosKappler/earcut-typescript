@@ -8,45 +8,46 @@ interface IVertex {
     y: number;
 };
 
-/**
- * Nodes of a linked list, each node representing a vertex of a ring (a polygon).
- */
-class Node implements IVertex {
-    i:number;
-    x:number;
-    y:number;
-    prev:Node|undefined;
-    next:Node|undefined;
-    z:any;
-    prevZ:any;
-    nextZ:any;
-    steiner:boolean;
-    
-    constructor( i:number, x:number, y:number ) {
-	// vertex index in coordinates array
-	this.i = i;
-
-	// vertex coordinates
-	this.x = x;
-	this.y = y;
-
-	// previous and next vertex nodes in a polygon ring
-	this.prev = null;
-	this.next = null;
-
-	// z-order curve value
-	this.z = null;
-
-	// previous and next nodes in z-order
-	this.prevZ = null;
-	this.nextZ = null;
-
-	// indicates whether this is a steiner point
-	this.steiner = false;
-    }
-};
 
 export const earcut = (() => {
+
+    /**
+     * Nodes of a linked list, each node representing a vertex of a ring (a polygon).
+     */
+    class Node implements IVertex {
+	i:number;
+	x:number;
+	y:number;
+	prev:Node|undefined;
+	next:Node|undefined;
+	z:any;
+	prevZ:any;
+	nextZ:any;
+	steiner:boolean;
+	
+	constructor( i:number, x:number, y:number ) {
+	    // vertex index in coordinates array
+	    this.i = i;
+
+	    // vertex coordinates
+	    this.x = x;
+	    this.y = y;
+
+	    // previous and next vertex nodes in a polygon ring
+	    this.prev = null;
+	    this.next = null;
+
+	    // z-order curve value
+	    this.z = null;
+
+	    // previous and next nodes in z-order
+	    this.prevZ = null;
+	    this.nextZ = null;
+
+	    // indicates whether this is a steiner point
+	    this.steiner = false;
+	}
+    };
 
     const earcut = (data : Array<number>, holeIndices : Array<number>, dim:number=2) : Array<number> => {
 

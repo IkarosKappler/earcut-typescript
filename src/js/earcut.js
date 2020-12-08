@@ -6,31 +6,31 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.earcut = void 0;
 ;
-/**
- * Nodes of a linked list, each node representing a vertex of a ring (a polygon).
- */
-var Node = /** @class */ (function () {
-    function Node(i, x, y) {
-        // vertex index in coordinates array
-        this.i = i;
-        // vertex coordinates
-        this.x = x;
-        this.y = y;
-        // previous and next vertex nodes in a polygon ring
-        this.prev = null;
-        this.next = null;
-        // z-order curve value
-        this.z = null;
-        // previous and next nodes in z-order
-        this.prevZ = null;
-        this.nextZ = null;
-        // indicates whether this is a steiner point
-        this.steiner = false;
-    }
-    return Node;
-}());
-;
 exports.earcut = (function () {
+    /**
+     * Nodes of a linked list, each node representing a vertex of a ring (a polygon).
+     */
+    var Node = /** @class */ (function () {
+        function Node(i, x, y) {
+            // vertex index in coordinates array
+            this.i = i;
+            // vertex coordinates
+            this.x = x;
+            this.y = y;
+            // previous and next vertex nodes in a polygon ring
+            this.prev = null;
+            this.next = null;
+            // z-order curve value
+            this.z = null;
+            // previous and next nodes in z-order
+            this.prevZ = null;
+            this.nextZ = null;
+            // indicates whether this is a steiner point
+            this.steiner = false;
+        }
+        return Node;
+    }());
+    ;
     var earcut = function (data, holeIndices, dim) {
         if (dim === void 0) { dim = 2; }
         dim = dim || 2;
