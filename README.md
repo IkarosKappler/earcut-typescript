@@ -1,3 +1,8 @@
+This is the Typescript port of the [earcut.js library](https://github.com/mapbox/earcut "earcut.js library")
+by [mapbox](https://github.com/mapbox/earcut "mapbox")
+
+Port by (Ikaros Kappler)(https://github.com/IkarosKappler "Ikaros Kappler")
+
 ## Earcut
 
 The fastest and smallest JavaScript polygon triangulation library. 2.5KB gzipped.
